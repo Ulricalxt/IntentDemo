@@ -4,15 +4,124 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="20dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/ButtonToMain"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/test2"
+        android:gravity="center"
+        android:text="显示跳转"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonToBaidu"
+        app:layout_constraintEnd_toEndOf="@+id/ButtonToBaidu"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/ButtonToBaidu"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ButtonToBaidu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/test1"
+        android:gravity="center"
+        android:text="百度一下"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonToMain" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/test1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonToPhone"
+        app:layout_constraintEnd_toEndOf="@+id/ButtonToPhone"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/ButtonToPhone"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonToBaidu">
+
+        <EditText
+            android:id="@+id/edit_key"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/test1"
+            android:ems="10"
+            android:hint="输入搜索词"
+            android:inputType="textPersonName"
+            android:paddingHorizontal="20dp"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/ButtonToBing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:gravity="center"
+            android:paddingHorizontal="20dp"
+            android:text="必应"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ButtonToPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/test1"
+        android:gravity="center"
+        android:text="拨打电话"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonToSMS"
+        app:layout_constraintEnd_toEndOf="@+id/ButtonToSMS"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/ButtonToSMS"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/ButtonToSMS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/test1"
+        android:gravity="center"
+        android:text="发送短信"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonToCamera"
+        app:layout_constraintEnd_toEndOf="@+id/ButtonToCamera"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/ButtonToCamera"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonToPhone" />
+
+    <Button
+        android:id="@+id/ButtonToCamera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/test1"
+        android:gravity="center"
+        android:text="打开相机"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonToImplicit"
+        app:layout_constraintEnd_toEndOf="@+id/ButtonToImplicit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/ButtonToImplicit"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonToSMS" />
+
+    <Button
+        android:id="@+id/ButtonToImplicit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/test1"
+        android:gravity="center"
+        android:text="自定义隐式跳转"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonToCamera"
+        tools:layout_editor_absoluteX="7dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
