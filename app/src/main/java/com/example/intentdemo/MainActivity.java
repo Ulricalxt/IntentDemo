@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.widget.Toast;
 
 import com.example.intentdemo.databinding.ActivityMainBinding;
@@ -51,8 +52,26 @@ public class MainActivity extends AppCompatActivity {
                 call(Intent.ACTION_CALL);
             }
         });
-    }
 
+        /**
+         * 发送短信
+         * */
+        mBinding.ButtonToSMS.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            intent.setData(Uri.parse("smsto:17671049231"));
+            intent.putExtra("sms_body","年轻人发送第一条短信");
+            startActivity(intent);
+        });
+
+        mBinding.ButtonToCamera.setOnClickListener(v -> {
+            //启动系统相机
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivity(intent);
+        });
+    }
+/**
+ * 打电话
+ * */
     private void call(String action) {
         Intent intent = new Intent();
         intent.setAction(action);
