@@ -68,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivity(intent);
         });
+        mBinding.ButtonToImplicit.setOnClickListener(v -> {
+            Intent intent = new Intent("com.my.test");
+            startActivity(intent);
+        });
     }
 /**
  * 打电话
